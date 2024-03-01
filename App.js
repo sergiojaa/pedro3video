@@ -1,17 +1,31 @@
 
 import styles from './App.module.css';
-//tenaru operatprs 14wutamde
-
+import {User} from './User'
+// darchenili 24wutamdemere exercise solution wamova
 function App() {
-  const age = 19 ;
-  const isGreen = true
+  const names = ['nika','gio','sergi', 'sandro' ,]
+  const users = [
+    {name: 'nika', age:24 },
+    {name: 'gio', age:18 },
+    {name: 'sergi', age:18 },
+    {name: 'sandro', age:12 }
+  ]
+  
   return (
     <div className='App'>
-  //   {age >= 18 ? <h1>Over Age</h1> : <h1>under age</h1>}
-  //   <h1 style={{color: isGreen ? 'green' : 'red'}}>this has color {}</h1>
-  //   {isGreen && <button>this is button</button>}
-    
-  </div>
+      {users.map((user, key)=>{
+        return <User name = {user.name}  age = {user.age} />
+      })}
+
+
+
+
+      {names.map((name,key) =>{
+    return <h1 key={key} > {name}</h1>
+  })} 
+
+
+    </div>
   )
   
 }
